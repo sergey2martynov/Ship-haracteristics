@@ -10,7 +10,7 @@ namespace ContosoUniversity.Controllers
 {
     public class HomeController : Controller
     {
-        private SchoolContext db = new SchoolContext();
+        private TaxiDepotContext db = new TaxiDepotContext();
 
         public ActionResult Index()
         {
@@ -29,11 +29,11 @@ namespace ContosoUniversity.Controllers
             //           };
 
             // SQL version of the above LINQ code.
-            string query = "SELECT EnrollmentDate, COUNT(*) AS StudentCount "
+            string query = "SELECT HireDate, COUNT(*) AS DriverCount "
                 + "FROM Person "
-                + "WHERE Discriminator = 'Student' "
-                + "GROUP BY EnrollmentDate";
-            IEnumerable<EnrollmentDateGroup> data = db.Database.SqlQuery<EnrollmentDateGroup>(query);
+                + "WHERE Discriminator = 'Driver' "
+                + "GROUP BY HireDate";
+            IEnumerable<ContractDateGroup> data = db.Database.SqlQuery<ContractDateGroup>(query);
             return View(data.ToList());
         }
 

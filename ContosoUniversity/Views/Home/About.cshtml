@@ -1,18 +1,19 @@
-﻿@model IEnumerable<ContosoUniversity.ViewModels.EnrollmentDateGroup>
+﻿@model IEnumerable<ContosoUniversity.ViewModels.ContractDateGroup>
 
 @{
-    ViewBag.Title = "Student Body Statistics";
+    ViewBag.Title = "Driver Body Statistics";
 }
 
-<h2>Student Body Statistics</h2>
+<h2>Driver Body Statistics</h2>
 
 <table>
     <tr>
         <th>
-            Enrollment Date
+            Hire Date
         </th>
+
         <th>
-            Students
+            Drivers
         </th>
     </tr>
 
@@ -20,10 +21,11 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                @Html.DisplayFor(modelItem => item.HireDate)
             </td>
+
             <td>
-                @item.StudentCount
+                @item.DriverCount
             </td>
         </tr>
     }
